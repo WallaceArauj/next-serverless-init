@@ -1,0 +1,14 @@
+service:
+  name: next-serverless-init
+
+provider:
+  name: aws
+  runtime: nodejsv19.6.0
+  region: west-1-eu
+
+functions:
+  app:
+    handler: .next/serverless/pages/api/*.js
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
