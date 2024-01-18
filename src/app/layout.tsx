@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import './globals.css';
 import { Metadata } from 'next';
+import Navbar from './navbar';
+
 
 type Props = {
   children: ReactNode
@@ -14,18 +16,22 @@ export const metadata: Metadata = {
 
 }
 
+
+
 const Layout = ({ children }: Props) => {
   return (
     <html>
-      <body className='bg-black text-white'>
-        <h1>My First Project Next</h1>
+      <body style={{ background: 'linear-gradient(to right, #ff8c00, #ff0000)', 
+      minHeight: '100vh', margin: '0', padding: '0' }} className='bg-black text-white'>
+        <Navbar />
+        <h1>My First Project</h1>
         <hr />
         <div>
           {children}
         </div>
       </body>
     </html>
-  )
-}
+  );
+};
 
 export default Layout;
